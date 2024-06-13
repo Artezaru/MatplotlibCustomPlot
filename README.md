@@ -1,7 +1,7 @@
 # MatplotlibCustomPlot 
  
 Author: Artezaru 
-Version: version-0.0 
+Version: version-1.0 
 Year:  
 License: contact Artezaru on artezaru.github@proton.me before using it 
  

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CustomBoxPlot &mdash; MatplotlibCustomPlot version-1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=93f3b2aa"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Welcome to MatplotlibCustomPlot’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            MatplotlibCustomPlot
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CustomBoxPlot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#MatplotlibCustomPlot.CustomBoxPlot"><code class="docutils literal notranslate"><span class="pre">CustomBoxPlot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MatplotlibCustomPlot.CustomBoxPlot.__init__"><code class="docutils literal notranslate"><span class="pre">CustomBoxPlot.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MatplotlibCustomPlot.CustomBoxPlot.add_boxplot"><code class="docutils literal notranslate"><span class="pre">CustomBoxPlot.add_boxplot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MatplotlibCustomPlot.CustomBoxPlot.set_title"><code class="docutils literal notranslate"><span class="pre">CustomBoxPlot.set_title()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MatplotlibCustomPlot.CustomBoxPlot.set_xlabel"><code class="docutils literal notranslate"><span class="pre">CustomBoxPlot.set_xlabel()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MatplotlibCustomPlot.CustomBoxPlot.set_ylabel"><code class="docutils literal notranslate"><span class="pre">CustomBoxPlot.set_ylabel()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MatplotlibCustomPlot</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">CustomBoxPlot</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/doc/CustomBoxPlot.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="customboxplot">
+<h1>CustomBoxPlot<a class="headerlink" href="#customboxplot" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="MatplotlibCustomPlot.CustomBoxPlot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MatplotlibCustomPlot.</span></span><span class="sig-name descname"><span class="pre">CustomBoxPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MatplotlibCustomPlot.CustomBoxPlot" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>CustomBoxPlot is a class to manage an ax on a given matplotlib.pyplot.figure object.
+This ax allows ploting BoxPlot with the following properties:</p>
+<ul class="simple">
+<li><p>center of the box: average value of the data.</p></li>
+<li><p>dimension of the box: standard deviation values of the data.</p></li>
+<li><p>dimension of the bar: minimum and maximum value of the data.</p></li>
+</ul>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<dl>
+<dt>figure<span class="classifier">matplotlib.figure.Figure</span></dt><dd><p>The figure on which the ax will be created.</p>
+</dd>
+<dt>ax_location<span class="classifier">Tuple[int]</span></dt><dd><p>The location of the ax on the figure. See figure.add_subplot() method.
+The Tuple must contains 3 positive integers.</p>
+<p>Default : (1,1,1), means that the ax use the entire space of the figure.</p>
+</dd>
+</dl>
+</section>
+<section id="raises">
+<h2>Raises<a class="headerlink" href="#raises" title="Link to this heading"></a></h2>
+<p>TypeError : If a given argument is wrong type or the length of the Tuple is not 3. See figure.add_subplot() method.</p>
+<p>ValueError : If a given number is not positive integer or correct value.</p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<p>Basic usage of <cite>CustomBoxPlot</cite>:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">MatplotlibCustomPlot</span> <span class="kn">import</span> <span class="n">CustomBoxPlot</span>
+
+<span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">BoxPlot</span> <span class="o">=</span> <span class="n">CustomBoxPlot</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax_location</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">BoxPlot</span><span class="o">.</span><span class="n">add_boxplot</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Data1.1&#39;</span><span class="p">,</span><span class="s1">&#39;Data1.2&#39;</span><span class="p">))</span>
+<span class="n">BoxPlot</span><span class="o">.</span><span class="n">add_boxplot</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Data2&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="MatplotlibCustomPlot.CustomBoxPlot.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MatplotlibCustomPlot.CustomBoxPlot.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MatplotlibCustomPlot.CustomBoxPlot.add_boxplot">
+<span class="sig-name descname"><span class="pre">add_boxplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'black'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">average_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'red'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linewidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">draw_whiskers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">draw_average</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_average</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MatplotlibCustomPlot.CustomBoxPlot.add_boxplot" title="Link to this definition"></a></dt>
+<dd><p>Adds a custom boxplot to the given position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+<section id="id1">
+<h3>Parameters<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<dl>
+<dt>data<span class="classifier">numpy.ndarray</span></dt><dd><p>The data to create the bowplot. The array must be 1-dimensional or
+2-dimensional. If data is 2-dimensional, each line will be use to plot a
+boxplot.</p>
+</dd>
+<dt>position<span class="classifier">Union[int, Sequence[int]]</span></dt><dd><p>The position(s) on the x-axis at which the box plot is ploted.</p>
+</dd>
+<dt>label<span class="classifier">Optional[Union[int, Sequence[int]]]</span></dt><dd><p>The label(s) corresponding with the bowplot to put on the x-axis.</p>
+<p>Default : None, means that the label is position parameter.</p>
+</dd>
+<dt>box_color<span class="classifier">Union[str, Sequence[str]]</span></dt><dd><p>The color(s) of the box.</p>
+<p>Default : ‘black’</p>
+</dd>
+<dt>average_color<span class="classifier">Union[str, Sequence[str]]</span></dt><dd><p>The color(s) of the average line.</p>
+<p>Default : ‘red’</p>
+</dd>
+<dt>linewidth<span class="classifier">Union[int, Sequence[int]]</span></dt><dd><p>The width(s) of the boxplot lines.</p>
+<p>Default : 2</p>
+</dd>
+<dt>draw_whiskers<span class="classifier">Union[bool, Sequence[bool]] </span></dt><dd><p>If the min-max bar(s) need to be ploted.</p>
+<p>Default : True</p>
+</dd>
+<dt>draw_average<span class="classifier">Union[bool, Sequence[bool]] </span></dt><dd><p>If the average bar(s) need to be ploted.</p>
+<p>Default : True</p>
+</dd>
+<dt>print_average<span class="classifier">Union[bool, Sequence[bool]] </span></dt><dd><p>If the average value should be printing.</p>
+<p>Default : False</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h3>Raises<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>TypeError : If a given argument is wrong type.</p>
+<p>ValueError : If a given argument as not correct value or size.</p>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MatplotlibCustomPlot.CustomBoxPlot.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MatplotlibCustomPlot.CustomBoxPlot.set_title" title="Link to this definition"></a></dt>
+<dd><p>Sets the title of the ax.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+<section id="id3">
+<h3>Parameters<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>title<span class="classifier">str</span></dt><dd><p>The title to set on the ax.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MatplotlibCustomPlot.CustomBoxPlot.set_xlabel">
+<span class="sig-name descname"><span class="pre">set_xlabel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xlabel</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MatplotlibCustomPlot.CustomBoxPlot.set_xlabel" title="Link to this definition"></a></dt>
+<dd><p>Sets the xlabel of the ax.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+<section id="id4">
+<h3>Parameters<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>xlabel<span class="classifier">str</span></dt><dd><p>The xlabel to set on the ax.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MatplotlibCustomPlot.CustomBoxPlot.set_ylabel">
+<span class="sig-name descname"><span class="pre">set_ylabel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ylabel</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MatplotlibCustomPlot.CustomBoxPlot.set_ylabel" title="Link to this definition"></a></dt>
+<dd><p>Sets the ylabel of the ax.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+<section id="id5">
+<h3>Parameters<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>ylabel<span class="classifier">str</span></dt><dd><p>The ylabel to set on the ax.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to MatplotlibCustomPlot’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright , Artezaru.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
